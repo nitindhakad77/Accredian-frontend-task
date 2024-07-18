@@ -7,7 +7,7 @@ function ReferralModal({ isOpen, onClose }) {
   const [referrerEmail, setReferrerEmail] = useState('');
   const [refereeName, setRefereeName] = useState('');
   
-
+  const apiUrl = "https://accredian-backend-task-2w33.onrender.com";
   const handleSubmit = async (event) => {
     event.preventDefault();
     
@@ -21,7 +21,7 @@ function ReferralModal({ isOpen, onClose }) {
     console.log('Form data:', data); 
   
     try {
-      const response = await fetch('http://localhost:3000/api/referrals', {
+      const response = await fetch(`${apiUrl}/api/referrals`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
